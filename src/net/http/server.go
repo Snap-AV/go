@@ -1006,9 +1006,9 @@ func (c *conn) readRequest(ctx context.Context) (w *response, err error) {
 	if len(hosts) > 1 {
 		return nil, badRequestError("too many Host headers")
 	}
-	if len(hosts) == 1 && !httpguts.ValidHostHeader(hosts[0]) {
-		return nil, badRequestError("malformed Host header")
-	}
+	//if len(hosts) == 1 && !httpguts.ValidHostHeader(hosts[0]) {
+	//	return nil, badRequestError("malformed Host header")
+	//}
 	for k, vv := range req.Header {
 		if !httpguts.ValidHeaderFieldName(k) {
 			return nil, badRequestError("invalid header name")
